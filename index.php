@@ -1,5 +1,16 @@
 <?php
 
+//ТЕОРИЯ по MVC
+/*
+// MVC - способ организации кода, который предполагает выделение блоков,
+            //отвечающих за решение различных здач - это класс
+// Model - Модель - это компонент, отвечающий за данные (БД)
+// View - Представление (вид) - это компонент, отвечающий за внешний вид и взаимодействие с пользователем
+// Controller - Кортроллер - это компонент, отвечающий за связь между моделью и представлением
+                    //- это класс, у него есть методы (экшены)
+// Схема MVC: пользователь->view->router->controller->model->db->model->controller->view->пользователь
+*/
+/////////////////////////////////////////
 //ТЕОРИЯ по PDO
 /*
 //https://www.php.net/manual/ru/book.pdo.php
@@ -13,6 +24,7 @@
 // 3. пароль БД
 */
 
+/*
 try { //исключение
     $pdo = new PDO('mysql:host=localhost;dbname=pdo', 'root', 'root'); // объект подключения
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -24,6 +36,7 @@ try { //исключение
     echo $e->getMessage();
     die();
 }
+*/
 
 /*
 $res = $pdo->query('SELECT * FROM `books`'); //выполняет запрос к БД
@@ -52,6 +65,7 @@ while ($arRes = $res->fetch(PDO::FETCH_ASSOC)) {
 //echo '</pre>';
 */
 
+/*
 $id = 2;
 //$stm = $pdo->prepare("SELECT * FROM `books` WHERE `id` = ?"); //prepare - позволяет использовать плейсхолдер (в query - нельзя)
 //$stm->execute([$id]);
@@ -64,3 +78,10 @@ print_r($res);
 
 $cntUpdate = $pdo->exec("UPDATE `books` SET `year` = 2007  WHERE `id` = 1"); //Возвращает количество затронутых записей
 var_dump($cntUpdate);
+*/
+
+echo __FILE__;
+
+//echo '<pre>';
+//print_r($_REQUEST);
+//echo '</pre>';

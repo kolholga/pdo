@@ -1,0 +1,19 @@
+addDefaultCharset utf8
+
+# ЕДИНАЯ ТОЧКА ВХОДА
+
+RewriteEngine on #Включает mod_rewrite - модуль сервера apache для манипуляции и изменения URL (работает на основе регулярных выражений)
+
+# перенаправлять, если это не файл
+RewriteCond %{REQUEST_FILENAME} !-f
+# перенаправлять, если это не директория
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteRule <regexp> <path> [flags] - синтаксис
+# все запросы отправляются на index.php
+RewriteRule ^(.*)$ index.php?param=$1 [QSA,L]
+
+# флаги:
+# L - прекратить дальнейшее применение правил
+# QSA - передать как часть строки запроса
+# NC - задает чувствительность регистра
